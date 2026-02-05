@@ -385,10 +385,18 @@ export default function MaximLandingPage() {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="+90 (___) ___ __ __"
+                      placeholder="+90 (5__) ___ __ __"
                       required
+                      pattern="[0-9]{10,15}"
+                      maxLength="15"
+                      title="Lütfen geçerli bir telefon numarası giriniz (sadece rakam)"
+                      onInput={(e) => {
+                        // Sadece rakamları kabul et
+                        e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '');
+                      }}
                       className="w-full px-6 py-4 bg-gray-50 rounded-2xl border border-gray-100 focus:border-blue-500 outline-none transition-all"
                     />
+                    <p className="text-xs text-gray-400 mt-1">Sadece rakam giriniz (örn: 5425560622)</p>
                   </div>
                 </div>
 
