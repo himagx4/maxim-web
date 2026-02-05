@@ -140,13 +140,13 @@ export default function MaximLandingPage() {
           <div className="grid md:grid-cols-2 gap-40 items-center">
             {/* Left side: Logo Area */}
             <div className="relative order-2 md:order-1 mr-auto md:mr-0">
-              <div className="bg-[#1e293b] rounded-3xl w-full max-w-xl h-[550px] flex flex-col items-center justify-center relative shadow-2xl overflow-hidden group">
+              <div className="bg-[#1e293b] rounded-3xl w-full max-w-xl h-[550px] flex items-center justify-center relative shadow-2xl overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 w-full h-full p-2 flex items-center justify-center">
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-0">
                   <img
                     src="https://ucarecdn.com/738e6530-b46e-45c2-80de-be27787bf16e/"
                     alt="Maxim Logo"
-                    className="w-auto h-full max-w-full max-h-full object-contain drop-shadow-2xl"
+                    className="w-full h-full object-cover scale-125"
                   />
                 </div>
               </div>
