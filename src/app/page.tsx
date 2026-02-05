@@ -1,3 +1,5 @@
+[file name]: page.tsx
+[file content begin]
 import React, { useState } from "react";
 import {
   ShieldCheck,
@@ -65,6 +67,27 @@ export default function MaximLandingPage() {
   const phoneNumber = "+90 (542) 556 06 22";
   const email = "maxim@maximgrup.com";
 
+  // Smooth scroll function
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
+  const handleHomeClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-[#003d5b] text-white font-sans selection:bg-[#2563eb] selection:text-white">
       {/* Navigation */}
@@ -77,25 +100,28 @@ export default function MaximLandingPage() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-12 text-sm font-medium">
-              <a href="#" className="hover:text-blue-400 transition-colors">
+              <button
+                onClick={handleHomeClick}
+                className="hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer"
+              >
                 Anasayfa
-              </a>
-              <a
-                href="#neden-biz"
-                className="hover:text-blue-400 transition-colors"
+              </button>
+              <button
+                onClick={() => scrollToSection("neden-biz")}
+                className="hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer"
               >
                 Neden Biz?
-              </a>
-              <button className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
+              </button>
+              <button className="flex items-center space-x-1 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer">
                 <Globe size={16} />
                 <span>TR</span>
               </button>
-              <a
-                href="#iletisim"
-                className="bg-[#2563eb] hover:bg-blue-600 px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-blue-500/20"
+              <button
+                onClick={() => scrollToSection("iletisim")}
+                className="bg-[#2563eb] hover:bg-blue-600 px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-blue-500/20 cursor-pointer"
               >
                 İletişime Geç
-              </a>
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -113,19 +139,25 @@ export default function MaximLandingPage() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-[#003d5b] border-t border-white/10 px-4 pt-2 pb-6 space-y-2">
-            <a href="#" className="block py-2 hover:text-blue-400">
+            <button
+              onClick={handleHomeClick}
+              className="block py-2 hover:text-blue-400 w-full text-left bg-transparent border-none cursor-pointer"
+            >
               Anasayfa
-            </a>
-            <a href="#neden-biz" className="block py-2 hover:text-blue-400">
+            </button>
+            <button
+              onClick={() => scrollToSection("neden-biz")}
+              className="block py-2 hover:text-blue-400 w-full text-left bg-transparent border-none cursor-pointer"
+            >
               Neden Biz?
-            </a>
+            </button>
             <div className="pt-4">
-              <a
-                href="#iletisim"
-                className="block text-center bg-[#2563eb] py-3 rounded-xl font-bold"
+              <button
+                onClick={() => scrollToSection("iletisim")}
+                className="block text-center bg-[#2563eb] py-3 rounded-xl font-bold w-full cursor-pointer"
               >
                 İletişime Geç
-              </a>
+              </button>
             </div>
           </div>
         )}
@@ -142,11 +174,11 @@ export default function MaximLandingPage() {
             <div className="relative order-2 md:order-1 mr-auto md:mr-0">
               <div className="bg-[#1e293b] rounded-3xl w-full max-w-xl h-[550px] flex items-center justify-center relative shadow-2xl overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 w-full h-full flex items-center justify-center p-0">
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-1">
                   <img
                     src="https://ucarecdn.com/738e6530-b46e-45c2-80de-be27787bf16e/"
                     alt="Maxim Logo"
-                    className="w-full h-full object-cover scale-125"
+                    className="w-full h-full object-cover scale-110"
                   />
                 </div>
               </div>
@@ -410,17 +442,20 @@ export default function MaximLandingPage() {
               </h4>
               <ul className="space-y-4 font-medium text-white/70">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <button
+                    onClick={handleHomeClick}
+                    className="hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+                  >
                     Anasayfa
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="#neden-biz"
-                    className="hover:text-white transition-colors"
+                  <button
+                    onClick={() => scrollToSection("neden-biz")}
+                    className="hover:text-white transition-colors bg-transparent border-none cursor-pointer"
                   >
                     Neden Biz?
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -466,3 +501,4 @@ export default function MaximLandingPage() {
     </div>
   );
 }
+[file content end]
