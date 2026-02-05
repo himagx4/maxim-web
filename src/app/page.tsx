@@ -1,5 +1,3 @@
-[file name]: page.tsx
-[file content begin]
 import React, { useState } from "react";
 import {
   ShieldCheck,
@@ -501,4 +499,3 @@ export default function MaximLandingPage() {
     </div>
   );
 }
-[file content end]
