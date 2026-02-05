@@ -37,9 +37,9 @@ import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
 
 export const links = () => [
   {
-    rel: 'icon',
-    type: 'image/png',
-    href: `${import.meta.env.BASE_URL}favicon.png`,
+    rel: "icon",
+    type: "image/png",
+    href: "/favicon.png?v=2",
   },
 ];
 
